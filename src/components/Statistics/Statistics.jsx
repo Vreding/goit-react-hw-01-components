@@ -4,13 +4,13 @@ import { StatisticSection, StatisticListItem } from './Statistics.styled';
 export const Statistics = ({ stats, title }) => {
   return (
     <StatisticSection>
-      {typeof title === 'string' && <h2 class="title">{title}</h2>}
+      {title && <h2 class="title">{title}</h2>}
 
       <ul class="stat-list">
-        {stats.map(stat => (
-          <StatisticListItem key={stat.id} id={stat.id}>
-            <span class="label">{stat.label}</span>
-            <span class="percentage">{stat.percentage}</span>
+        {stats.map(({ id, label, percentage }) => (
+          <StatisticListItem key={id} id={id}>
+            <span class="label">{label}</span>
+            <span class="percentage">{percentage}</span>
           </StatisticListItem>
         ))}
       </ul>

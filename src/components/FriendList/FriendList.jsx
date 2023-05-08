@@ -1,26 +1,19 @@
+// import { FriendsListUl } from './FriendList.styled';
 import PropTypes from 'prop-types';
-import {
-  FriendsWrapper,
-  FriendsListItem,
-  OnlineBadge,
-} from './FriendList.styled';
+import { FriendsListItem } from './FriendListItem';
+import { FriendsListUl } from './FriendList.styled';
 
 export const FriendsList = ({ friends }) => {
   return (
-    <FriendsWrapper>
-      {friends.map(friend => (
-        <FriendsListItem key={friend.id}>
-          <OnlineBadge active={friend.isOnline}></OnlineBadge>
-          <img
-            class="avatar"
-            src={friend.avatar}
-            alt="User avatar"
-            width="90"
-          />
-          <p class="name">{friend.name}</p>
-        </FriendsListItem>
-      ))}
-    </FriendsWrapper>
+    <div>
+      <FriendsListUl>
+        {friends.map(friend => (
+          <li key={friend.id}>
+            <FriendsListItem friend={friend} />
+          </li>
+        ))}
+      </FriendsListUl>
+    </div>
   );
 };
 

@@ -1,18 +1,17 @@
 import { GlobalStyle } from './GlobalStyle';
 import { Profile } from './Profile/Profile';
-import user from '../user.json';
+import user from './dataFiles/user.json';
 import { Statistics } from './Statistics/Statistics';
-import data from '../data.json';
+import data from './dataFiles/data.json';
 import { FriendsList } from './FriendList/FriendList';
-import friends from '../friends.json';
+import friends from './dataFiles/friends.json';
 import { TransactionHistory } from './TransactionHistory/TransactionHistory';
-import transactions from '../transactions.json';
+import transactions from './dataFiles/transactions.json';
 
 export const App = () => {
   return (
     <div
       style={{
-        // height: '100vh',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
